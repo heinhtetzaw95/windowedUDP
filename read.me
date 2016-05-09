@@ -1,0 +1,18 @@
+Name: 		Hein Htet Zaw
+Class: 		CSC 3600011
+Term: 		Spring 2016
+Professor: 	Dr. Miller, Lawrence
+Due Date:	May 8th, 2016 (Sunday)
+
+There are two parts in this project: 
+	1) server
+	2) client
+
+The server and clients communicate using UDP and there are timers.
+The server should be run first so the client get replies back.
+Since there is no connection establishment, the client never knows if the server is up or down.
+The only way to know is to wait for the acks from the server. 
+
+If there is any problem, either the server is down or connection errors, client cannot get the ack back and the system will stop. 
+This program employs timers so there is a little time that the clients wait for the acks back from the server. 
+When the timer goes off, the client does not wait for the ack anymore and move on to the next message.

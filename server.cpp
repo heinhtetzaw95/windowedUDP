@@ -5,6 +5,9 @@
 #include <netinet/in.h>
 #include <stdlib.h>
 #include <arpa/inet.h>
+#include <signal.h>
+#include <time.h>
+#include <unistd.h>
 
 using namespace std;
 
@@ -48,6 +51,10 @@ int main(int argc, char *argv[]){
 
 			//print the message received
 		cout << "Message received: " << buffer << endl;
+
+			//send the message just received back to client
+		sendto(mySocket, buffer, nBytes, 0, (struct sockaddr *)&serverAddr, addr_size);
+
 	}
 
 	return 0;
